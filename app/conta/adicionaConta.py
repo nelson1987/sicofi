@@ -18,3 +18,11 @@ class AdicionaContaHandler:
     def __call__(self, comando):
         conta = comando.to_entity()
         self.repositorio_contas.adicionar(conta)
+
+class ListaContaHandler:
+    def __init__(self, repositorio_contas):
+        self.repositorio_contas = repositorio_contas
+
+    def __call__(self, comando):
+        #conta = comando.to_entity()
+        self.repositorio_contas.listar()
